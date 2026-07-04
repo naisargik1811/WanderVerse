@@ -1,0 +1,96 @@
+.discover-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+  max-width: 800px;
+}
+
+.search-header {
+  margin-bottom: 2rem;
+}
+
+.search-header h2 {
+  font-size: 2.5rem;
+}
+
+.search-header .subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+}
+
+.search-box {
+  padding: 2rem;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.5rem;
+  pointer-events: none;
+}
+
+.input-group .input-glass {
+  padding-left: 3.5rem;
+}
+
+.search-btn {
+  padding: 1rem;
+  font-size: 1.125rem;
+}
+
+.results-container {
+  padding: 2.5rem;
+  min-height: 200px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.results-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.results-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-full);
+}
+
+.results-container::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+}
+
+.results-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.cursor-blink {
+  display: inline-block;
+  width: 8px;
+  animation: blink 1s step-end infinite;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
