@@ -79,8 +79,11 @@ const Discover = () => {
       <div className="search-box glass-panel">
         <form onSubmit={handleSearch} className="search-form">
           <div className="input-group">
-            <MapPin className="input-icon text-primary" size={20} />
+            <label htmlFor="destination" className="sr-only">Destination</label>
+            <MapPin className="input-icon text-primary" size={20} aria-hidden="true" />
             <input
+              id="destination"
+              name="destination"
               type="text"
               className="input-glass"
               placeholder="Enter a destination (e.g., Kyoto, Rome, Bali)..."
@@ -90,8 +93,11 @@ const Discover = () => {
             />
           </div>
           <div className="input-group">
-            <Sparkles className="input-icon text-secondary" size={20} />
+            <label htmlFor="interests" className="sr-only">Interests</label>
+            <Sparkles className="input-icon text-secondary" size={20} aria-hidden="true" />
             <input
+              id="interests"
+              name="interests"
               type="text"
               className="input-glass"
               placeholder="Specific interests? (e.g., Food, History, Nature)..."
@@ -99,8 +105,8 @@ const Discover = () => {
               onChange={(e) => setInterests(e.target.value)}
             />
           </div>
-          <button type="submit" className="btn btn-primary search-btn" disabled={loading}>
-            {loading ? <Loader2 className="animate-spin" size={20} /> : <Navigation size={20} />}
+          <button type="submit" className="btn btn-primary search-btn" disabled={loading} aria-label="Generate Journey">
+            {loading ? <Loader2 className="animate-spin" size={20} aria-hidden="true" /> : <Navigation size={20} aria-hidden="true" />}
             {loading ? 'Discovering...' : 'Generate Journey'}
           </button>
         </form>
